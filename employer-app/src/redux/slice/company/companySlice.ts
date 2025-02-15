@@ -17,16 +17,15 @@ const companySlice = createSlice({
         });
         builder.addCase(FETCH_COMPANY_SUCCESS, (state, action) => {
             state.isLoading = false;
-            state.data = action.payload;
+            state.data = action.payload || null;
         });
         builder.addCase(FETCH_COMPANY_FAILURE, (state, action) => {
             state.isLoading = false;
-            state.error = action.error.message;
+            state.error = action.payload;
         });
     },
 })
 
 export const companyReducer = companySlice.reducer;
 
-export const { } = companySlice.actions
 
