@@ -1,5 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
+import { RootState } from "../redux/store";
 
 interface CompanyInfo {
   companyName: string;
@@ -29,6 +31,10 @@ const Company = () => {
   const [companyData, setCompanyData] = useState<CompanyDataResponse | null>(
     null
   );
+
+  const companyDetails = useSelector((state: RootState) => state.company);
+
+  console.log("CompanyDetails:", companyDetails);
 
   const fetchCompanyData = async () => {
     try {
