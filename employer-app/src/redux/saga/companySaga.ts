@@ -3,8 +3,10 @@ import axios from "axios"
 import { FETCH_COMPANY_SUCCESS, FETCH_COMPANY_FAILURE, FETCH_COMPANY_REQUEST } from '../actions/companyActions';
 import { CompanyDataResponse } from '../../utility/types';
 
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:5000/api";
+
 const fetchCompany = async () => {
-    const response = await axios('http://localhost:5000/api/company');
+    const response = await axios(`${API_BASE_URL}/company`);
     return response.data;
 }
 
