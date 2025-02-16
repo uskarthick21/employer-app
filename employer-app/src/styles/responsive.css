@@ -10,6 +10,8 @@
   }
   .emp-img-name {
     flex-direction: column;
+    padding-left: 0px;
+    gap: var(--spacing-small);
   }
   .modal-container {
     width: 85%;
@@ -34,6 +36,7 @@
   .employee-detail {
     flex-direction: column;
     height: auto;
+    gap: var(--spacing-small);
   }
   .detail-right .full-name {
     text-align: center;
