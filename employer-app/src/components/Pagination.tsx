@@ -1,6 +1,6 @@
 const Pagination = () => {
   return (
-    <nav aria-label="Pagination">
+    <nav className="pagination-container" aria-label="Pagination">
       <ul className="pagination">
         <li>
           <button

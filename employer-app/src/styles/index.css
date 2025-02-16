@@ -97,6 +97,7 @@ button:focus-visible {
   padding: 10px;
   border: 1px solid #da1710;
   border-radius: 3px;
+  cursor: pointer;
 }
 
 /******************** Header **********************/
@@ -172,6 +173,32 @@ button:focus-visible {
 }
 .emp-avatar {
   width: 100%;
+}
+
+/******************** Footer **********************/
+.pagination-container {
+  display: flex;
+  justify-content: end;
+  margin: 20px 0px 0px 0px;
+}
+
+.pagination-container ul {
+  margin: 0px;
+  display: flex;
+  padding: 0px;
+  gap: 10px;
+}
+
+.pagination-container li {
+  list-style-type: none;
+}
+
+.pagination-container li:first-child {
+  padding-right: 10px;
+}
+
+.pagination-container li:last-child {
+  padding-left: 10px;
 }
 
 /******************** Footer **********************/
