@@ -1,64 +1,26 @@
-Employer Application
+## Welcome!
 
-Setup Instructions
+This repository contains the final code for the code test. It has two folders: employer-app (Front End) and employer-backend (Back End). The user needs to run both folders in the terminal via a code editor (Visual Studio Code) to view the application successfully.
 
-1. Download the Application
+## Technical Requirements
 
-Clone or download the repository from GitHub:https://github.com/uskarthick21/employer-app
+employer-app (Front End):
 
-2. Locate the Downloaded File
+- Node v20.16.0
+- NPM 10.8.1
+- React ^19.0.0
+- Typescript
+- Redux
+- Redux toolkit
+- Redux Saga
+- Css (Plain css with Responsive web design)
+- Vite for Create react app.
+- Testing for Vitest
+- For Api communication Axios
 
-The downloaded file will be named `` in your Downloads folder.
+employer-backend (Back End):
 
-3. Extract the ZIP File
-
-Unzip the folder and open it.
-
-4. Project Structure
-
-Inside the unzipped folder, you will find two main directories:
-
-(Frontend) - employer-app
-
-(Backend) - employer-backend
-
-5. Open the Project in an Editor
-
-Open VS Code or any other preferred code editor.
-
-6. Open Project Folders in Separate Tabs
-
-Open both and in separate tabs in VS Code.
-
-Open two terminals:
-
-(Frontend) - employer-app
-
-(Backend) - employer-backend
-
-Terminal paths should look like this:
-
-Example 1: \employer-app-master\employer-app>
-Example 2: \employer-app-master\employer-backend>
-
-7. Install Dependencies
-
-Run the following command in each terminal:
-
-Example 1: \employer-app-master\employer-app> npm install
-Example 2: \employer-app-master\employer-backend> npm install
-
-8. Start the Application
-
-Once the installation is complete, start both the frontend and backend servers using:
-
-Example 1: \employer-app-master\employer-app> npm run dev
-Example 2: \employer-app-master\employer-backend> npm run dev
-
-9. Important: .env File Information
-
-The .env file is included in this project for interview purposes.
-
-Normally, this is not recommended in real-world projects due to security concerns.
-
-If the .env file is missing, you will need to create it manually inside the application.
+- Node v20.16.0
+- NPM 10.8.1
+- Express js (server)
+- Typscript
