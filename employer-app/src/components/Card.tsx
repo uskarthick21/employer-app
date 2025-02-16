@@ -12,15 +12,25 @@ const Card = ({
 }: CardProps) => {
   const [imgSrc, setImgSrc] = useState(image);
   const [isModalOpen, setModalOpen] = useState(false);
+  const [isActived, setIsActived] = useState(false);
   const defaultAvatar = "/default-avatar.png";
 
   const handleCardClick = () => {
     setModalOpen(true);
+    setIsActived(true);
+  };
+
+  const handleCloseModal = () => {
+    setModalOpen(false);
+    setIsActived(false);
   };
 
   return (
     <>
-      <div className="card" onClick={handleCardClick}>
+      <div
+        className={`card ${isActived ? "cardActive" : ""}`}
+        onClick={handleCardClick}
+      >
         <p className="emp emp-id">{id}</p>
         <div className="emp-img">
           <img
@@ -39,7 +49,7 @@ const Card = ({
         <p className="emp emp-address">Address: {address}</p>
       </div>
 
-      {isModalOpen && <ModalPopup onClose={() => setModalOpen(false)} />}
+      {isModalOpen && <ModalPopup onClose={handleCloseModal} />}
     </>
   );
 };

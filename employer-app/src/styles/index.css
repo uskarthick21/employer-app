@@ -161,9 +161,17 @@ button:focus-visible {
   border-bottom: 1px solid #dedee1;
   cursor: pointer;
   background: #f3f4f6;
+  transition: background 0.3s ease-in-out;
 }
 .card:last-child {
   border: none;
+}
+.card:hover {
+  background: #efc1bf;
+}
+.card.cardActive {
+  background: #d5635f;
+  box-shadow: 0px 4px 10px rgba(213, 99, 95, 0.6);
 }
 .emp {
   flex: 1;
