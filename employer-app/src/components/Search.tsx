@@ -1,6 +1,6 @@
 const Search = () => {
   return (
-    <div className="search">
+    <div data-testid="search" className="search">
       <label className="screen-reader-only" htmlFor="search-input">
         Search
       </label>

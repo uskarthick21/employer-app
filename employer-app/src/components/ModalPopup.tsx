@@ -28,6 +28,7 @@ function ModalPopup({ onClose, children }: ModalProps) {
           onClick={onClose}
           className="close-button"
           aria-label="Close modal"
+          role="button"
         >
           X
         </button>

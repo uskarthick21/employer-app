@@ -1,6 +1,10 @@
 const Pagination = () => {
   return (
-    <nav className="pagination-container" aria-label="Pagination">
+    <nav
+      data-testid="pagination"
+      className="pagination-container"
+      aria-label="Pagination"
+    >
       <ul className="pagination">
         <li>
           <button
