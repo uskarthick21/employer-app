@@ -2,21 +2,25 @@ import { useState } from "react";
 import { Employee } from "../utility/types";
 import ModalPopup from "./ModalPopup";
 import EmployeeDetail from "./EmployeeDetail";
+import { setEmployeeDetail } from "../redux/slice/employee/employeeDetailSlice";
+import { useDispatch } from "react-redux";
 
 interface CardProps {
   employee: Employee;
 }
 
 const Card = ({ employee }: CardProps) => {
+  const dispatch = useDispatch();
   const { id, avatar, firstName, lastName, contactNo, address } = employee;
   const [imgSrc, setImgSrc] = useState(avatar);
   const [isModalOpen, setModalOpen] = useState(false);
   const [isActived, setIsActived] = useState(false);
   const defaultAvatar = "/default-avatar.png";
 
-  const handleCardClick = () => {
+  const handleCardClick = (employee: Employee) => {
     setModalOpen(true);
     setIsActived(true);
+    dispatch(setEmployeeDetail(employee));
   };
 
   const handleCloseModal = () => {
@@ -33,8 +37,8 @@ const Card = ({ employee }: CardProps) => {
   return (
     <>
       <div
-        className={`card ${isActived ? "cardActive" : ""}`}
-        onClick={handleCardClick}
+        className={`card ${isActived ? "card-active" : ""}`}
+        onClick={() => handleCardClick(employee)}
       >
         <p className="emp emp-id">{id}</p>
         <div className="emp-img">
