@@ -32,15 +32,15 @@ const EmployeeDetail = () => {
             className="emp-avatar"
           />
         </div>
-        <div className="title">{jobTitle}</div>
-        <div className="age">{age}</div>
-        <div className="date">{dateJoined}</div>
+        <h3 className="title">{jobTitle}</h3>
+        <p className="age">{age}</p>
+        <p className="date">{new Date(dateJoined).toLocaleDateString()}</p>
       </div>
       <div className="detail-right">
-        <div className="full-name">{`${firstName} ${lastName}`}</div>
-        <div className="bio">{bio}</div>
-        <div className="address">{address}</div>
-        <div className="contact">{contactNo}</div>
+        <h2 className="full-name">{`${firstName} ${lastName}`}</h2>
+        <p className="bio">{bio}</p>
+        <p className="address">{address}</p>
+        <p className="contact">{contactNo}</p>
       </div>
     </div>
   );
