@@ -34,3 +34,10 @@
 .pagination-container li:last-child {
   padding-left: 10px;
 }
+
+.mobile {
+  display: none;
+}
+.desktop {
+  display: block;
+}

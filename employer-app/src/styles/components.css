@@ -44,7 +44,7 @@
 }
 
 .emp-img {
-  width: 100px;
+  width: 50px;
 }
 
 .emp-avatar {
@@ -63,7 +63,7 @@
   gap: 20px;
   align-items: center;
   justify-content: center;
-  height: 100%;
+  /* height: 100%; */
 }
 .detail-left {
   width: 35%;

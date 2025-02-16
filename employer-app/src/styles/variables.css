@@ -17,6 +17,7 @@
   --font-weight-bold: 500;
 
   /* Spacing */
+  --spacing-xs-small: 5px;
   --spacing-small: 10px;
   --spacing-medium: 20px;
 

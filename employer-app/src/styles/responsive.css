@@ -2,4 +2,49 @@
   .card {
     flex-direction: column;
   }
+  .first-col,
+  .second-col,
+  .third-col,
+  .fourth-col {
+    width: 100%;
+  }
+  .emp-img-name {
+    flex-direction: column;
+  }
+  .modal-container {
+    width: 85%;
+    height: 60vh;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 2em;
+  }
+  .pagination-container,
+  .search {
+    justify-content: center;
+  }
+  .search-input {
+    width: 70%;
+  }
+  .pagination button {
+    padding: var(--spacing-xs-small);
+  }
+  .employee-detail {
+    flex-direction: column;
+    height: auto;
+  }
+  .detail-right .full-name {
+    text-align: center;
+  }
+  .detail-left {
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 1.8em;
+  }
 }

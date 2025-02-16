@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import { RootState } from "../redux/store";
 import { useState } from "react";
+import useDebounceResize from "../hooks/useDebounceResize";
 
 const EmployeeDetail = () => {
   const empDetails = useSelector((state: RootState) => state.employeeDetail);
@@ -17,6 +18,7 @@ const EmployeeDetail = () => {
   } = empDetails;
   const [imgSrc, setImgSrc] = useState(avatar);
   const defaultAvatar = "/default-avatar.png";
+  const isMobile = useDebounceResize(300);
 
   return (
     <div className="employee-detail">
@@ -32,17 +34,35 @@ const EmployeeDetail = () => {
             className="emp-avatar"
           />
         </div>
-        <h3 className="title">{jobTitle}</h3>
-        <p className="age">
-          <strong>Age:</strong> {age}
-        </p>
-        <p className="date">
-          <strong>Joined Date: </strong>
-          {new Date(dateJoined ?? "").toLocaleDateString()}
-        </p>
+        {!isMobile && (
+          <>
+            <h3 className="title">{jobTitle}</h3>
+            <p className="age">
+              <strong>Age:</strong> {age}
+            </p>
+            <p className="date">
+              <strong>Joined Date: </strong>
+              {new Date(dateJoined ?? "").toLocaleDateString()}
+            </p>
+          </>
+        )}
       </div>
       <div className="detail-right">
         <h2 className="full-name">{`${firstName} ${lastName}`}</h2>
+        {isMobile && (
+          <>
+            <p className="title">
+              <strong>Role:</strong> {jobTitle}
+            </p>
+            <p className="age">
+              <strong>Age:</strong> {age}
+            </p>
+            <p className="date">
+              <strong>Joined Date: </strong>
+              {new Date(dateJoined ?? "").toLocaleDateString()}
+            </p>
+          </>
+        )}
         <p className="bio">{bio}</p>
         <p className="address">
           <strong>Address: </strong>

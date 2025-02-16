@@ -4,6 +4,7 @@ import ModalPopup from "./ModalPopup";
 import EmployeeDetail from "./EmployeeDetail";
 import { setEmployeeDetail } from "../redux/slice/employee/employeeDetailSlice";
 import { useDispatch } from "react-redux";
+import useDebounceResize from "../hooks/useDebounceResize";
 
 interface CardProps {
   employee: Employee;
@@ -16,6 +17,7 @@ const Card = ({ employee }: CardProps) => {
   const [isModalOpen, setModalOpen] = useState(false);
   const [isActived, setIsActived] = useState(false);
   const defaultAvatar = "/default-avatar.png";
+  const isMobile = useDebounceResize(300);
 
   const handleCardClick = (employee: Employee) => {
     setModalOpen(true);
@@ -40,7 +42,8 @@ const Card = ({ employee }: CardProps) => {
         className={`card ${isActived ? "card-active" : ""}`}
         onClick={() => handleCardClick(employee)}
       >
-        <p className="emp-id first-col">{id}</p>
+        {!isMobile && <p className="emp-id first-col">{id}</p>}
+
         <div className="emp-img-name  second-col">
           <div className="emp-img">
             <img
@@ -54,6 +57,7 @@ const Card = ({ employee }: CardProps) => {
             />
           </div>
           <h2 className="emp-title ">{`${firstName} ${lastName}`}</h2>
+          {isMobile && <p className="emp-id first-col">{id}</p>}
         </div>
 
         <p className="emp-contact third-col"> {contactNo}</p>
