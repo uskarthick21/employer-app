@@ -1,0 +1,40 @@
+@import url("./variables.css");
+
+#root {
+  max-width: 90%;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.container {
+  padding: var(--spacing-medium);
+  border: 1px solid var(--border-color);
+}
+
+.main-container {
+  padding: var(--spacing-medium) 0px;
+}
+
+/* Header */
+.header {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  padding-bottom: var(--spacing-medium);
+  gap: var(--spacing-medium);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Footer */
+.footer {
+  border-top: 1px solid var(--border-color);
+  padding: var(--spacing-medium) 0px 0px 0px;
+  text-align: center;
+}

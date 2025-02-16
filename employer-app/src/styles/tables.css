@@ -1,0 +1,45 @@
+@import url("./variables.css");
+
+.table-container {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border-color);
+}
+
+.table-header {
+  display: flex;
+  background-color: #f0f0f0;
+  font-weight: bold;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.header-column {
+  text-align: center;
+  border-left: 1px solid var(--border-color);
+  padding: var(--spacing-small);
+}
+
+.header-column:first-child {
+  border-left: 0px;
+}
+
+.table-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.first-col {
+  width: 20%;
+}
+.second-col {
+  width: 30%;
+}
+.third-col {
+  width: 20%;
+}
+.fourth-col {
+  width: 30%;
+}
+.data-count {
+  padding: 0px 0px 15px 0px;
+}

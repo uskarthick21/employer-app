@@ -1,0 +1,88 @@
+@import url("./variables.css");
+
+/* Search */
+.search {
+  display: flex;
+  gap: var(--spacing-small);
+  justify-content: end;
+  padding-bottom: var(--spacing-medium);
+}
+
+.search-input {
+  border: 1px solid var(--border-color);
+  padding: var(--spacing-small) 15px;
+  width: 300px;
+  border-radius: var(--border-radius-small);
+}
+
+/* Card */
+.card {
+  display: flex;
+  gap: var(--spacing-small);
+  padding: var(--spacing-small);
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color);
+  cursor: pointer;
+  background: var(--background-light);
+  transition: background 0.3s ease-in-out;
+  text-align: center;
+}
+
+.card:hover {
+  background: var(--primary-hover);
+}
+
+.card.card-active {
+  background: var(--primary-color);
+  color: var(--white);
+  box-shadow: var(--box-shadow);
+}
+
+.emp {
+  flex: 1;
+}
+
+.emp-img {
+  width: 100px;
+}
+
+.emp-avatar {
+  width: 100%;
+}
+
+.emp-img-name {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-small);
+  justify-content: center;
+}
+
+.employee-detail {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.detail-left {
+  width: 35%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.detail-right {
+  flex: 1;
+  display: flex;
+  text-align: left;
+  flex-direction: column;
+  gap: 10px;
+}
+.detail-left .avatar {
+  width: 100px;
+}
+
+.detail-right .full-name {
+  text-decoration: underline;
+}

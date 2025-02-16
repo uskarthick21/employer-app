@@ -1,0 +1,32 @@
+@import url("./variables.css");
+
+.btn-primary {
+  color: var(--white);
+  background-color: var(--primary-color);
+  padding: var(--spacing-small);
+  border: 1px solid var(--primary-color);
+  border-radius: var(--border-radius-small);
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+}
+
+button {
+  border-radius: var(--border-radius-medium);
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+  font-family: inherit;
+  background-color: var(--background-dark);
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
