@@ -28,3 +28,12 @@ export interface CompanyState {
     isLoading: boolean;
     error: string | null;
 }
+
+export interface CardProps {
+    id: string;
+    image: string;
+    firstName: string;
+    lastName: string;
+    contact: number;
+    address: string;
+}
