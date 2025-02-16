@@ -1,16 +1,15 @@
 import { useState } from "react";
-import { CardProps } from "../utility/types";
+import { Employee } from "../utility/types";
 import ModalPopup from "./ModalPopup";
+import EmployeeDetail from "./EmployeeDetail";
 
-const Card = ({
-  id,
-  image,
-  firstName,
-  lastName,
-  contact,
-  address,
-}: CardProps) => {
-  const [imgSrc, setImgSrc] = useState(image);
+interface CardProps {
+  employee: Employee;
+}
+
+const Card = ({ employee }: CardProps) => {
+  const { id, avatar, firstName, lastName, contactNo, address } = employee;
+  const [imgSrc, setImgSrc] = useState(avatar);
   const [isModalOpen, setModalOpen] = useState(false);
   const [isActived, setIsActived] = useState(false);
   const defaultAvatar = "/default-avatar.png";
@@ -24,6 +23,12 @@ const Card = ({
     setModalOpen(false);
     setIsActived(false);
   };
+
+  const modal = (
+    <ModalPopup onClose={handleCloseModal}>
+      <EmployeeDetail />
+    </ModalPopup>
+  );
 
   return (
     <>
@@ -45,11 +50,11 @@ const Card = ({
         </div>
 
         <h2 className="emp emp-title">{`${firstName} ${lastName}`}</h2>
-        <p className="emp emp-contact">Contact: {contact}</p>
+        <p className="emp emp-contact">Contact: {contactNo}</p>
         <p className="emp emp-address">Address: {address}</p>
       </div>
 
-      {isModalOpen && <ModalPopup onClose={handleCloseModal} />}
+      {isModalOpen && modal}
     </>
   );
 };

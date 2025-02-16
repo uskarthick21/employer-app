@@ -21,19 +21,9 @@ const Company = () => {
     <div className="company">
       {employees ? (
         <>
-          {employees.map((employee) => {
-            return (
-              <Card
-                key={employee.id}
-                id={employee.id}
-                image={employee.avatar}
-                firstName={employee.firstName}
-                lastName={employee.lastName}
-                contact={employee.contactNo}
-                address={employee.address}
-              />
-            );
-          })}
+          {employees.map((employee) => (
+            <Card key={employee.id} employee={employee} />
+          ))}
         </>
       ) : (
         <p>No Data</p>

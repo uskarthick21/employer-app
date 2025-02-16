@@ -2,9 +2,10 @@ import ReactDOM from "react-dom";
 
 interface ModalProps {
   onClose: () => void;
+  children: React.ReactNode;
 }
 
-function ModalPopup({ onClose }: ModalProps) {
+function ModalPopup({ onClose, children }: ModalProps) {
   const modalRoot = document.getElementById("modal-root");
   if (!modalRoot) {
     console.error("Modal root element not found");
@@ -30,7 +31,7 @@ function ModalPopup({ onClose }: ModalProps) {
         >
           X
         </button>
-        <div className="content">Modal Popup Content</div>
+        <div className="content">{children}</div>
       </div>
     </div>,
     modalRoot
