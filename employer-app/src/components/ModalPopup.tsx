@@ -22,7 +22,7 @@ function ModalPopup({ onClose, children }: ModalProps) {
 
   return ReactDOM.createPortal(
     <div className="modal-overlay" onClick={handleOverlayClick}>
-      <div className="modal-container">
+      <div role="dialog" className="modal-container">
         <button
           type="button"
           onClick={onClose}
