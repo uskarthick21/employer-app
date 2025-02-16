@@ -175,7 +175,7 @@ button:focus-visible {
   width: 100%;
 }
 
-/******************** Footer **********************/
+/******************** Pagination **********************/
 .pagination-container {
   display: flex;
   justify-content: end;
@@ -199,6 +199,46 @@ button:focus-visible {
 
 .pagination-container li:last-child {
   padding-left: 10px;
+}
+
+/******************** Modal **********************/
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  width: 400px;
+  text-align: center;
+  position: relative;
+}
+
+.close-button {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+  padding: 3px;
+  border-radius: 25px;
+  height: 25px;
+  width: 25px;
+  background: #da1710;
+  border: 1px solid #da1710;
 }
 
 /******************** Footer **********************/

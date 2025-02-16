@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { CardProps } from "../utility/types";
+import ModalPopup from "./ModalPopup";
 
 const Card = ({
   id,
@@ -10,28 +11,36 @@ const Card = ({
   address,
 }: CardProps) => {
   const [imgSrc, setImgSrc] = useState(image);
-  //const [isActive, setIsActive] = useState(false);
+  const [isModalOpen, setModalOpen] = useState(false);
   const defaultAvatar = "/default-avatar.png";
 
+  const handleCardClick = () => {
+    setModalOpen(true);
+  };
+
   return (
-    <div className="card">
-      <p className="emp emp-id">{id}</p>
-      <div className="emp-img">
-        <img
-          src={imgSrc}
-          alt={`${firstName} ${lastName}`}
-          onError={(e) => {
-            setImgSrc(defaultAvatar);
-            e.currentTarget.onerror = null;
-          }}
-          className="emp-avatar"
-        />
+    <>
+      <div className="card" onClick={handleCardClick}>
+        <p className="emp emp-id">{id}</p>
+        <div className="emp-img">
+          <img
+            src={imgSrc}
+            alt={`${firstName} ${lastName}`}
+            onError={(e) => {
+              setImgSrc(defaultAvatar);
+              e.currentTarget.onerror = null;
+            }}
+            className="emp-avatar"
+          />
+        </div>
+
+        <h2 className="emp emp-title">{`${firstName} ${lastName}`}</h2>
+        <p className="emp emp-contact">Contact: {contact}</p>
+        <p className="emp emp-address">Address: {address}</p>
       </div>
 
-      <h2 className="emp emp-title">{`${firstName} ${lastName}`}</h2>
-      <p className="emp emp-contact">Contact: {contact}</p>
-      <p className="emp emp-address">Address: {address}</p>
-    </div>
+      {isModalOpen && <ModalPopup onClose={() => setModalOpen(false)} />}
+    </>
   );
 };
 
