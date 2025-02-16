@@ -10,12 +10,12 @@ export interface Employee {
     avatar: string;
     firstName: string;
     lastName: string;
-    jobTitle: string;
+    jobTitle?: string;
     contactNo: number;
     address: string;
-    age: number;
-    bio: string;
-    dateJoined: string;
+    age?: number;
+    bio?: string;
+    dateJoined?: string;
 }
 
 export interface CompanyDataResponse {

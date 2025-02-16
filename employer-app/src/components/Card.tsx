@@ -40,22 +40,24 @@ const Card = ({ employee }: CardProps) => {
         className={`card ${isActived ? "card-active" : ""}`}
         onClick={() => handleCardClick(employee)}
       >
-        <p className="emp emp-id">{id}</p>
-        <div className="emp-img">
-          <img
-            src={imgSrc}
-            alt={`${firstName} ${lastName}`}
-            onError={(e) => {
-              setImgSrc(defaultAvatar);
-              e.currentTarget.onerror = null;
-            }}
-            className="emp-avatar"
-          />
+        <p className="emp-id first-col">{id}</p>
+        <div className="emp-img-name  second-col">
+          <div className="emp-img">
+            <img
+              src={imgSrc}
+              alt={`${firstName} ${lastName}`}
+              onError={(e) => {
+                setImgSrc(defaultAvatar);
+                e.currentTarget.onerror = null;
+              }}
+              className="emp-avatar"
+            />
+          </div>
+          <h2 className="emp-title ">{`${firstName} ${lastName}`}</h2>
         </div>
 
-        <h2 className="emp emp-title">{`${firstName} ${lastName}`}</h2>
-        <p className="emp emp-contact">Contact: {contactNo}</p>
-        <p className="emp emp-address">Address: {address}</p>
+        <p className="emp-contact third-col"> {contactNo}</p>
+        <p className="emp-address fourth-col"> {address}</p>
       </div>
 
       {isModalOpen && modal}

@@ -110,6 +110,7 @@ button:focus-visible {
 
 .container {
   padding: 20px;
+  border: 1px solid #dedee1;
 }
 
 .header {
@@ -155,13 +156,14 @@ button:focus-visible {
 .card {
   display: flex;
   gap: 10px;
-  justify-content: center;
   padding: 10px;
+  justify-content: center;
   align-items: center;
   border-bottom: 1px solid #dedee1;
   cursor: pointer;
   background: #f3f4f6;
   transition: background 0.3s ease-in-out;
+  text-align: center;
 }
 .card:last-child {
   border: none;
@@ -170,7 +172,9 @@ button:focus-visible {
   background: #efc1bf;
 }
 .card.card-active {
-  background: #d5635f;
+  /* background: #d5635f; */
+  background: #da1710;
+  color: #ffffff;
   box-shadow: 0px 4px 10px rgba(213, 99, 95, 0.6);
 }
 .emp {
@@ -181,6 +185,12 @@ button:focus-visible {
 }
 .emp-avatar {
   width: 100%;
+}
+.emp-img-name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
 }
 
 /******************** Employee Detail **********************/
@@ -210,6 +220,9 @@ button:focus-visible {
   width: 100px;
 }
 
+.detail-right .full-name {
+  text-decoration: underline;
+}
 /******************** Pagination **********************/
 .pagination-container {
   display: flex;
@@ -288,4 +301,55 @@ button:focus-visible {
   border-top: 1px solid #dedee1;
   padding: 20px 0px 0px 0px;
   text-align: center;
+}
+
+/******************** Table **********************/
+.data-count {
+  padding: 0px 0px 15px 0px;
+}
+
+.table-container {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #dedee1;
+}
+
+/* Header row styling */
+.table-header {
+  display: flex;
+  background-color: #f0f0f0;
+  font-weight: bold;
+  border-bottom: 1px solid #dedee1;
+}
+
+/* Each header column label */
+.header-column {
+  text-align: center;
+  border-left: 1px solid #dedee1;
+  padding: 15px;
+}
+.header-column:first-child {
+  border-left: 0px;
+}
+/* Body container for rows */
+.table-body {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+/* .table-row {
+  margin: 5px 0px;
+} */
+
+.first-col {
+  width: 20%;
+}
+.second-col {
+  width: 30%;
+}
+.third-col {
+  width: 20%;
+}
+.fourth-col {
+  width: 30%;
 }

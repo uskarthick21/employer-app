@@ -33,14 +33,25 @@ const EmployeeDetail = () => {
           />
         </div>
         <h3 className="title">{jobTitle}</h3>
-        <p className="age">{age}</p>
-        <p className="date">{new Date(dateJoined).toLocaleDateString()}</p>
+        <p className="age">
+          <strong>Age:</strong> {age}
+        </p>
+        <p className="date">
+          <strong>Joined Date: </strong>
+          {new Date(dateJoined ?? "").toLocaleDateString()}
+        </p>
       </div>
       <div className="detail-right">
         <h2 className="full-name">{`${firstName} ${lastName}`}</h2>
         <p className="bio">{bio}</p>
-        <p className="address">{address}</p>
-        <p className="contact">{contactNo}</p>
+        <p className="address">
+          <strong>Address: </strong>
+          {address}
+        </p>
+        <p className="contact">
+          <strong>Contact: </strong>
+          {contactNo}
+        </p>
       </div>
     </div>
   );
