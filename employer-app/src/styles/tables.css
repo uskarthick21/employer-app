@@ -17,10 +17,30 @@
   text-align: center;
   border-left: 1px solid var(--border-color);
   padding: var(--spacing-small);
+  position: relative;
 }
 
 .header-column:first-child {
   border-left: 0px;
+}
+
+.order-arrow {
+  position: absolute;
+  right: 35px;
+}
+
+.order-arrow a {
+  text-decoration: none;
+}
+.up {
+  color: var(--text-color);
+  position: inherit;
+  top: -12px;
+}
+.down {
+  color: var(--text-color);
+  position: inherit;
+  top: 10px;
 }
 
 .table-body {

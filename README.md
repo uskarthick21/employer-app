@@ -64,16 +64,19 @@ The requirement is make simple app without much using of external libraires. So 
   - **employer-app (Front End)**
 
 - Terminal paths should look like this:
-  **Example 1:** `\employer-app-master\employer-app>`
-  **Example 2:** `\employer-app-master\employer-backend>`
+
+  - **Example 1:** `\employer-app-master\employer-app>`
+  - **Example 2:** `\employer-app-master\employer-backend>`
 
 - To Install Dependencies, run the following command in each terminal:
-  **Example 1:** `\employer-app-master\employer-app> npm install `
-  **Example 2:** `\employer-app-master\employer-backend> npm install`
+
+  - **Example 1:** `\employer-app-master\employer-app> npm install `
+  - **Example 2:** `\employer-app-master\employer-backend> npm install`
 
 - To Start the Application, once the installation is complete, start both the frontend and backend servers using:
-  **Example 1:** `\employer-app-master\employer-app> npm run dev`
-  **Example 2:** `\employer-app-master\employer-backend> npm run dev`
+
+  - **Example 1:** `\employer-app-master\employer-app> npm run dev`
+  - **Example 2:** `\employer-app-master\employer-backend> npm run dev`
 
 - **⚠️ IMPORTANT:** `.env `File Information.
 - The .env file is included in this project for interview purposes.

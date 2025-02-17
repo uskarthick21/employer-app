@@ -29,15 +29,48 @@ const Company = () => {
           <div className="table-header">
             <div className="header-column first-col">
               <span>ID</span>
-
-              {/* <span className="order-arrow">
-                <span>&#9650;</span>
-                <span>&#9660;</span>
-              </span> */}
+              <span className="order-arrow">
+                <a className="down" title="sort for aescending order" href="#">
+                  &#9660;
+                </a>
+                <a className="up" title="sort for desending order" href="#">
+                  &#9650;
+                </a>
+              </span>
             </div>
-            <div className="header-column second-col">Name</div>
-            <div className="header-column third-col">Contact No</div>
-            <div className="header-column fourth-col">Address</div>
+            <div className="header-column second-col">
+              <span>Name</span>
+              <span className="order-arrow">
+                <a className="down" title="sort for aescending order" href="#">
+                  &#9660;
+                </a>
+                <a className="up" title="sort for desending order" href="#">
+                  &#9650;
+                </a>
+              </span>
+            </div>
+            <div className="header-column third-col">
+              <span>Contact No</span>
+              <span className="order-arrow">
+                <a className="down" title="sort for aescending order" href="#">
+                  &#9660;
+                </a>
+                <a className="up" title="sort for desending order" href="#">
+                  &#9650;
+                </a>
+              </span>
+            </div>
+            <div className="header-column fourth-col">
+              <span>Address</span>
+              <span className="order-arrow">
+                <a className="down" title="sort for aescending order" href="#">
+                  &#9660;
+                </a>
+                <a className="up" title="sort for desending order" href="#">
+                  &#9650;
+                </a>
+              </span>
+            </div>
           </div>
         )}
 
