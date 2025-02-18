@@ -15,7 +15,7 @@ const fetchEmployees = async (searchTerm: string) => {
         if (error.response?.status === 404) {
             throw new Error("No employees found");
         } else if (error.response?.status === 500) {
-            throw new Error("Something went wrong on the server. Please try again later dsdfsfsd.");
+            throw new Error("Something went wrong on the server. Please try again later.");
         }
         throw new Error("Something went wrong. Please try again.");
     }
