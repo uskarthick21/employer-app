@@ -1,7 +1,6 @@
 import Layout from "./layouts/Layout";
 import Company from "./components/Company";
 import Search from "./components/Search";
-import Pagination from "./components/Pagination";
 
 const App = () => {
   return (
@@ -9,7 +8,6 @@ const App = () => {
       <Layout>
         <Search />
         <Company />
-        <Pagination />
       </Layout>
     </>
   );

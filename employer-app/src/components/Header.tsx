@@ -31,6 +31,11 @@ const Header = () => {
 
   return (
     <header className="header">
+      <div className="logo">
+        <a href="/">
+          <img src="/logo.png" alt="WestPac" />
+        </a>
+      </div>
       <div className="header-title">
         <h1>{companyName}</h1>
       </div>

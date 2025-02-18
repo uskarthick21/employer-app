@@ -3,6 +3,7 @@ import { RootState } from "../redux/store";
 import Card from "./Card";
 import useDebounceResize from "../hooks/useDebounceResize";
 import { setSortField } from "../redux/slice/sort/sortSlice";
+import Pagination from "./Pagination";
 
 const Company = () => {
   const dispatch = useDispatch();
@@ -174,6 +175,7 @@ const Company = () => {
           ))}
         </div>
       </div>
+      {employees.length > 0 && <Pagination />}
     </>
   );
 };

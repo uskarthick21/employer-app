@@ -11,6 +11,7 @@ const fetchEmployees = async (searchTerm: string) => {
             params: { search: searchTerm },
         });
         return response.data;
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (error: any) {
         if (error.response?.status === 404) {
             throw new Error("No employees found");
@@ -25,6 +26,7 @@ function* fetchEmployeesSaga(action: { type: string; payload: string }) {
     try {
         const data: Employee[] = yield call(fetchEmployees, action.payload);
         yield put(SEARCH_EMPLOYEES_SUCCESS(data));
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (error: any) {
         yield put(SEARCH_EMPLOYEES_FAILURE(error.message));
     }

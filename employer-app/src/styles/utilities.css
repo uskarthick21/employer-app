@@ -34,7 +34,12 @@
 .pagination-container li:last-child {
   padding-left: 10px;
 }
-
+.error {
+  text-align: center;
+  background: #ffbbbb;
+  border: 1px solid var(--primary-color);
+  padding: 20px;
+}
 .mobile {
   display: none;
 }
