@@ -5,7 +5,7 @@ interface Props {
 }
 const Layout = ({ children }: Props) => {
   return (
-    <div className="container">
+    <div data-testid="layout" className="container">
       <Header />
       <main className="main-container">{children}</main>
       <Footer />

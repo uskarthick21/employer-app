@@ -6,7 +6,6 @@ import { describe, it, expect, vi, beforeEach } from "vitest";
 import { companyReducer } from "../redux/slice/company/companySlice";
 import { FETCH_COMPANY_REQUEST } from "../redux/actions/companyActions";
 
-// ✅ Fix: Partially Mock "react-redux"
 vi.mock("react-redux", async (importOriginal) => {
   const actual = await importOriginal();
   return {

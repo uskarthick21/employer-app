@@ -31,6 +31,7 @@ const EmployeeDetail = () => {
               setImgSrc(defaultAvatar);
               e.currentTarget.onerror = null;
             }}
+            title={`${firstName} ${lastName}`}
             className="emp-avatar"
           />
         </div>

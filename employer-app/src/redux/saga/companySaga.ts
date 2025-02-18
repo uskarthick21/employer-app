@@ -5,12 +5,12 @@ import { CompanyDataResponse } from '../../utility/types';
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
-const fetchCompany = async () => {
+export const fetchCompany = async () => {
     const response = await axios(`${API_BASE_URL}/company`);
     return response.data;
 }
 
-function* fetchCompanySaga(): Generator<unknown, void, CompanyDataResponse> {
+export function* fetchCompanySaga(): Generator<unknown, void, CompanyDataResponse> {
     try {
         const data = yield call(fetchCompany)
         yield put(FETCH_COMPANY_SUCCESS(data));

@@ -54,6 +54,7 @@ const Card = ({ employee }: CardProps) => {
                 e.currentTarget.onerror = null;
               }}
               className="emp-avatar"
+              title={`${firstName} ${lastName}`}
             />
           </div>
           <h2 className="emp-title ">{`${firstName} ${lastName}`}</h2>

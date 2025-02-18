@@ -5,7 +5,7 @@ import { Employee } from "../../utility/types";
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
-const fetchEmployees = async (searchTerm: string) => {
+export const fetchEmployees = async (searchTerm: string) => {
     try {
         const response = await axios.get(`${API_BASE_URL}/employee`, {
             params: { search: searchTerm },
@@ -22,7 +22,7 @@ const fetchEmployees = async (searchTerm: string) => {
     }
 };
 
-function* fetchEmployeesSaga(action: { type: string; payload: string }) {
+export function* fetchEmployeesSaga(action: { type: string; payload: string }) {
     try {
         const data: Employee[] = yield call(fetchEmployees, action.payload);
         yield put(SEARCH_EMPLOYEES_SUCCESS(data));
