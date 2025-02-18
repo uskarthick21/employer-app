@@ -2,6 +2,7 @@ import express, { Application } from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import companyRoutes from "./routes/companyRoutes";
+import searchRoutes from "./routes/searchRoutes";
 
 // Load environment variables
 dotenv.config();
@@ -15,6 +16,7 @@ app.use(express.json());
 
 // Routes
 app.use("/api/company", companyRoutes);
+app.use("/api/employee", searchRoutes);
 
 // Start server
 app.listen(PORT, () => {

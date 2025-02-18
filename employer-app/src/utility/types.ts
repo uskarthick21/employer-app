@@ -37,3 +37,9 @@ export interface CardProps {
     contact: number;
     address: string;
 }
+
+export interface EmployeeSearchState {
+    data: Employee[];
+    isLoading: boolean;
+    error: string | null;
+}
