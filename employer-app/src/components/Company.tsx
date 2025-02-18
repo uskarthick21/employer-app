@@ -4,25 +4,50 @@ import Card from "./Card";
 import useDebounceResize from "../hooks/useDebounceResize";
 
 const Company = () => {
+  // Fetch company data
   const company = useSelector((state: RootState) => state.company.data);
-  const isLoading = useSelector((state: RootState) => state.company.isLoading);
-  const error = useSelector((state: RootState) => state.company.error);
+  const isCompanyLoading = useSelector(
+    (state: RootState) => state.company.isLoading
+  );
+  const companyError = useSelector((state: RootState) => state.company.error);
+
+  // Fetch search data
+  const search = useSelector((state: RootState) => state.search.data);
+  const isSearchLoading = useSelector(
+    (state: RootState) => state.search.isLoading
+  );
+  const searchError = useSelector((state: RootState) => state.search.error);
+
+  // Error Handle
+  const errorMessage = searchError || companyError;
+
+  // Show employees count
+  const totalEmployees = company?.employees?.length ?? 0;
+  const displayEmployees = search.length > 0 ? search.length : totalEmployees;
+
+  // Responsive check
   const isMobile = useDebounceResize(300);
 
-  if (isLoading) {
-    return <div className="loading">...loading</div>;
+  //Handle which data to display
+  let employees = company?.employees ?? [];
+  if (search.length > 0) {
+    employees = search;
   }
 
-  if (error) {
-    return <div className="error">Error on Employees data</div>;
+  //Loading State
+  if (isCompanyLoading || isSearchLoading) {
+    return <div className="loading">Loading employees...</div>;
   }
 
-  const employees = company?.employees ?? [];
+  // Error State
+  if (errorMessage) {
+    return <div className="error">{errorMessage}</div>;
+  }
 
   return (
     <>
       <div className="data-count">
-        <span>Showing 10 of 500</span>
+        <span>{`Showing ${displayEmployees} of ${totalEmployees}`}</span>
       </div>
       <div className="table-container">
         {!isMobile && (
@@ -75,15 +100,11 @@ const Company = () => {
         )}
 
         <div className="table-body">
-          {employees && employees.length > 0 ? (
-            employees.map((employee) => (
-              <div className="table-row" key={employee.id}>
-                <Card employee={employee} />
-              </div>
-            ))
-          ) : (
-            <p className="no-data">No Data</p>
-          )}
+          {employees.map((employee) => (
+            <div className="table-row" key={employee.id}>
+              <Card employee={employee} />
+            </div>
+          ))}
         </div>
       </div>
     </>

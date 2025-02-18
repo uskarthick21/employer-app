@@ -14,8 +14,8 @@ const Search = () => {
   };
 
   return (
-    <div data-testid="search" className="search">
-      <form onSubmit={handleSubmit}>
+    <div data-testid="search">
+      <form className="search" onSubmit={handleSubmit}>
         <label className="screen-reader-only" htmlFor="search-input">
           Search
         </label>

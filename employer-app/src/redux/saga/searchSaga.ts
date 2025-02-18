@@ -6,20 +6,27 @@ import { Employee } from "../../utility/types";
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 const fetchEmployees = async (searchTerm: string) => {
-    const response = await axios.get(`${API_BASE_URL}/employee`, {
-        params: { search: searchTerm },
-    });
-    return response.data;
+    try {
+        const response = await axios.get(`${API_BASE_URL}/employee`, {
+            params: { search: searchTerm },
+        });
+        return response.data;
+    } catch (error: any) {
+        if (error.response?.status === 404) {
+            throw new Error("No employees found");
+        } else if (error.response?.status === 500) {
+            throw new Error("Something went wrong on the server. Please try again later dsdfsfsd.");
+        }
+        throw new Error("Something went wrong. Please try again.");
+    }
 };
 
-
-function* fetchEmployeesSaga(action: { type: string; payload: string }): Generator<unknown, void, Employee[]> {
+function* fetchEmployeesSaga(action: { type: string; payload: string }) {
     try {
-        const data = yield call(fetchEmployees, action.payload);
+        const data: Employee[] = yield call(fetchEmployees, action.payload);
         yield put(SEARCH_EMPLOYEES_SUCCESS(data));
-    } catch (error) {
-        const errorMessage = error instanceof Error ? error.message : "Unknown error occurred";
-        yield put(SEARCH_EMPLOYEES_FAILURE(errorMessage));
+    } catch (error: any) {
+        yield put(SEARCH_EMPLOYEES_FAILURE(error.message));
     }
 }
 

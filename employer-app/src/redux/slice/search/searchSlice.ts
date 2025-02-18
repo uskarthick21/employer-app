@@ -26,6 +26,7 @@ const searchSlice = createSlice({
         builder.addCase(SEARCH_EMPLOYEES_SUCCESS, (state, action) => {
             state.isLoading = false;
             state.data = action.payload;
+            state.error = null;
         });
         builder.addCase(SEARCH_EMPLOYEES_FAILURE, (state, action) => {
             state.isLoading = false;

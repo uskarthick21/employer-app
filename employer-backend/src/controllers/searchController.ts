@@ -9,18 +9,12 @@ export const fetchSearchedEmployees = (req: Request, res: Response): void => {
         if (employees.length === 0) {
             res.status(404).json({
                 message: "No employees found",
-                data: [],
             });
             return;
         }
-        res.status(200).json({
-            message: "Employees retrieved successfully",
-            data: employees,
-        });
+        res.status(200).json(employees);
+        //throw new Error("Simulated Server Error");
     } catch (error) {
-        res.status(500).json({
-            message: "Internal Server Error",
-            error: error instanceof Error ? error.message : "Unknown error",
-        });
+        res.status(500).json({ error: "Internal Server Error" });
     }
 };
