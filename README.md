@@ -1,3 +1,5 @@
+![image](https://github.com/user-attachments/assets/0304d6a4-7910-42d9-95b2-3c528d8374b8)
+
 ## Welcome!
 
 This repository contains the final code for the code test.
@@ -86,5 +88,4 @@ The requirement is make simple app without much using of external libraires. So 
 - create a file `.env` and place the text `PORT=3000` and put the file inside `employer-backend/src`. The `.env` should be inside `src` folder. This is for backEnd.
 - Then stop the application from running and restart both **employer-backend (Back End)** and **employer-app (Front End)** enviroment by this command `npm run dev` and application load perfectly.
 
-![image](https://github.com/user-attachments/assets/43d9fc1e-b735-4fe4-a412-f5dc1fa71853)
 
