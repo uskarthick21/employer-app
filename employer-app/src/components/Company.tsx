@@ -38,10 +38,7 @@ const Company = () => {
   const isMobile = useDebounceResize(300);
 
   //Handle which data to display
-  let employees = company?.employees ?? [];
-  if (search.length > 0) {
-    employees = search;
-  }
+  let employees = search.length > 0 ? search : company?.employees ?? [];
 
   // Apply sorting if a field is selected
   if (sortField) {

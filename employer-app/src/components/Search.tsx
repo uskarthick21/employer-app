@@ -1,6 +1,10 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { SEARCH_EMPLOYEES_REQUEST } from "../redux/actions/searchActions";
+import {
+  SEARCH_EMPLOYEES_REQUEST,
+  SEARCH_RESET,
+} from "../redux/actions/searchActions";
+import { FETCH_COMPANY_REQUEST } from "../redux/actions/companyActions";
 
 const Search = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -11,6 +15,12 @@ const Search = () => {
     if (searchTerm.trim() !== "") {
       dispatch(SEARCH_EMPLOYEES_REQUEST(searchTerm));
     }
+  };
+
+  const handleReset = () => {
+    setSearchTerm("");
+    dispatch(SEARCH_RESET());
+    dispatch(FETCH_COMPANY_REQUEST());
   };
 
   return (
@@ -28,8 +38,16 @@ const Search = () => {
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
-        <button className="btn btn-primary" type="submit">
+        <button aria-label="Submit" className="btn btn-primary" type="submit">
           Submit
+        </button>
+        <button
+          aria-label="Reset"
+          onClick={handleReset}
+          className="btn btn-primary"
+          type="button"
+        >
+          Reset
         </button>
       </form>
     </div>

@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { SEARCH_EMPLOYEES_REQUEST, SEARCH_EMPLOYEES_SUCCESS, SEARCH_EMPLOYEES_FAILURE } from "../../actions/searchActions";
+import { SEARCH_EMPLOYEES_REQUEST, SEARCH_EMPLOYEES_SUCCESS, SEARCH_EMPLOYEES_FAILURE, SEARCH_RESET } from "../../actions/searchActions";
 import { Employee } from "../../../utility/types";
 
 interface EmployeeSearchState {
@@ -32,6 +32,11 @@ const searchSlice = createSlice({
             state.isLoading = false;
             state.error = action.payload;
         });
+        builder.addCase(SEARCH_RESET, (state) => {
+            state.data = []
+            state.isLoading = false;
+            state.error = null;
+        })
     },
 });
 
